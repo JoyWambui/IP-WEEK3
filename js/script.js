@@ -36,7 +36,9 @@ Pizza.prototype.prices =function(){
   }else if(size === "Medium"){
     let mediumPrice = 100
     return "Ksh."+( mediumPrice + (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70));
-
+  }else if(size === "Large"){
+    let largePrice = 150
+    return "Ksh."+( largePrice + (cheeseToppings*150) + (meatToppings*130) + (veggieToppings*80) + (sauceToppings*100));
   }
   //check price calculation
   console.log("Ksh." + smallTotal);
