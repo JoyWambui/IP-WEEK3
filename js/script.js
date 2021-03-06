@@ -8,7 +8,11 @@ function Pizza(pizzaSize, crustType){
 
   Pizza.prototype.addCheese = function(cheese){
     return this.cheeses.push(cheese);
+  }  
+  Pizza.prototype.addMeat = function(meat){
+    return this.meats.push(meat);
   }
+
 }
 $(document).ready(function(){
   console.log("ready");
@@ -34,6 +38,20 @@ $(document).ready(function(){
       }
       //check cheese function
         console.log(cheeses);
+    });
+    $(".meatSelection").each(function(){
+      let meats = []
+      let selectMeat = document.getElementsByName("meat");
+      for(var i = 0; i < selectMeat.length; i++){
+        if(selectMeat[i].checked){
+          meats.push(selectMeat[i].value)
+        }
+      }
+      for(var i = 0; i < meats.length; i++){
+        newPizza.addMeat(meats[i])
+      }
+      //check cheese function
+        console.log(meats);
     });
   });
 });
