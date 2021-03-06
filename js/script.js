@@ -23,12 +23,19 @@ Pizza.prototype.addSauce = function(sauce){
   return this.sauces.push(sauce);
 }
 Pizza.prototype.prices =function(){
-let size = this.pizzaSize;
-let cheeseToppings = this.cheeses.length;
-let meatToppings = this.meats.length;
-let veggieToppings = this.vegetables.length;
-let sauceToppings = this.sauces.length;
-console.log(size, cheeseToppings, meatToppings, veggieToppings, sauceToppings);
+  let size = this.pizzaSize;
+  let cheeseToppings = this.cheeses.length;
+  let meatToppings = this.meats.length;
+  let veggieToppings = this.vegetables.length;
+  let sauceToppings = this.sauces.length;
+  //checking working of function
+  console.log(size, cheeseToppings, meatToppings, veggieToppings, sauceToppings);
+  if(size === "Small"){
+    let smallPrice = 50
+    return "Ksh."+( smallPrice + (cheeseToppings*80) + (meatToppings*50) + (veggieToppings*30) + (sauceToppings*35));
+  }
+  //check price calculation
+  console.log("Ksh." + smallTotal);
 }
 
 //user interface logic
