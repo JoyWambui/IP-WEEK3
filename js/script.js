@@ -1,3 +1,4 @@
+//business logic
 function Pizza(pizzaSize, crustType){
   this.pizzaSize = pizzaSize;
   this.crustType = crustType;
@@ -5,18 +6,24 @@ function Pizza(pizzaSize, crustType){
   this.meats = [];
   this.vegetables = [];
   this.sauces = [];
-
-  Pizza.prototype.addCheese = function(cheese){
-    return this.cheeses.push(cheese);
-  }  
-  Pizza.prototype.addMeat = function(meat){
-    return this.meats.push(meat);
-  }
-  Pizza.prototype.addVeggies = function(veggies){
-    return this.vegetables.push(veggies);
-  }
-
+  this.displayOrder = function(){
+    return this.pizzaSize + " " + this.crustType + " " + this.cheeses + " " + this.meats + " " + this.vegetables + " " + this.sauces 
+  };
 }
+Pizza.prototype.addCheese = function(cheese){
+  return this.cheeses.push(cheese);
+}  
+Pizza.prototype.addMeat = function(meat){
+  return this.meats.push(meat);
+}
+Pizza.prototype.addVeggies = function(veggies){
+  return this.vegetables.push(veggies);
+}
+Pizza.prototype.addSauce = function(sauce){
+  return this.sauces.push(sauce);
+}
+
+//user interface logic
 $(document).ready(function(){
   console.log("ready");
  $("#pizzaForm").submit(function(event){
@@ -70,5 +77,20 @@ $(document).ready(function(){
       //check cheese function
         console.log(vegetables);
     });
+    $(".sauceSelection").each(function(){
+      let sauces = []
+      let selectSauce = document.getElementsByName("sauce");
+      for(var i = 0; i < selectSauce.length; i++){
+        if(selectSauce[i].checked){
+          sauces.push(selectSauce[i].value)
+        }
+      }
+      for(var i = 0; i < sauces.length; i++){
+        newPizza.addSauce(sauces[i])
+      }
+      //check cheese function
+        console.log(sauces);
+    });
+    console.log(newPizza.displayOrder());
   });
 });
