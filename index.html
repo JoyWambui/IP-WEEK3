@@ -20,7 +20,7 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-10">
-            <form>
+            <form id="pizzaForm">
               <h2 class="text-center">Build your pizza</h2>
               <div>
                 <h3>Enter Name:</h3>
@@ -49,8 +49,8 @@
                   <option value="doubleStack">Double Stack</option>
                 </select>
               </div><br><hr>
+              <h2 class="text-center">Toppings:</h2><br>
               <div>
-                <h2 class="text-center">Toppings:</h2><br>
                 <h3>Cheeses:</h3>
                 <div class="row">
                   <div class="col-md-4">
@@ -71,130 +71,131 @@
                       <label class="form-check-label" for="feta">Feta</label>
                     </div> 
                   </div>
-                </div><br>
-                  <h3>Meats:</h3>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="chicken">
-                        <label class="form-check-label" for="chicken">Chicken</label>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="groundBeef">
-                        <label class="form-check-label" for="groundBeef">Ground Beef</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">                 
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="steakcubes">
-                        <label class="form-check-label" for="steakCubes">Beef Steak Cubes</label>
-                      </div> 
-                    </div>
-                  </div> 
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="ham">
-                        <label class="form-check-label" for="ham">Ham</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="bacon">
-                        <label class="form-check-label" for="bacon">Bacon</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="sausage">
-                        <label class="form-check-label" for="sausage">Italian Sausage</label>
-                      </div>
-                    </div> 
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="pepperoni" checked>
-                        <label class="form-check-label" for="pepperoni">Pepperoni</label>
-                      </div>  
-                    </div>
-                  </div>                
-                </div><br>
-                <div>
-                  <h3>Vegetables:</h3>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="pineapple" checked>
-                        <label class="form-check-label" for="pineapple">Pineapple</label>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="olives">
-                        <label class="form-check-label" for="olives">Olives</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">                 
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="corn">
-                        <label class="form-check-label" for="corn">Yellow Corn</label>
-                      </div> 
-                    </div>
-                  </div> 
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="greenPepper">
-                        <label class="form-check-label" for="greenPepper">Green Pepper</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="redPepper">
-                        <label class="form-check-label" for="redPepper">Red Bellpepper</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="yellowPepper">
-                        <label class="form-check-label" for="yellowPepper">Yellow Bellpepper</label>
-                      </div>
-                    </div> 
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="onion">
-                        <label class="form-check-label" for="onion">Onion</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="tomato" checked>
-                        <label class="form-check-label" for="tomato">Tomato</label>
-                      </div> 
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="mushroom">
-                        <label class="form-check-label" for="mushroom">Mushroom</label>
-                      </div>
-                    </div> 
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="chilli">
-                        <label class="form-check-label" for="chilli">Crushed Chilli in Oil</label>
-                      </div>  
-                    </div>
-                </div> 
                 </div>
-              </div> 
-              <div><br>
+              </div><br>
+              <div>
+                <h3>Meats:</h3>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="chicken">
+                      <label class="form-check-label" for="chicken">Chicken</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="groundBeef">
+                      <label class="form-check-label" for="groundBeef">Ground Beef</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">                 
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="steakcubes">
+                      <label class="form-check-label" for="steakCubes">Beef Steak Cubes</label>
+                    </div> 
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="ham">
+                      <label class="form-check-label" for="ham">Ham</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="bacon">
+                      <label class="form-check-label" for="bacon">Bacon</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="sausage">
+                      <label class="form-check-label" for="sausage">Italian Sausage</label>
+                    </div>
+                  </div> 
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="pepperoni" checked>
+                      <label class="form-check-label" for="pepperoni">Pepperoni</label>
+                    </div>  
+                  </div>
+                </div>
+              </div><br>
+              <div>               
+                <h3>Vegetables:</h3>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="pineapple" checked>
+                      <label class="form-check-label" for="pineapple">Pineapple</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="olives">
+                      <label class="form-check-label" for="olives">Olives</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">                 
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="corn">
+                      <label class="form-check-label" for="corn">Yellow Corn</label>
+                    </div> 
+                  </div>
+                </div> 
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="greenPepper">
+                      <label class="form-check-label" for="greenPepper">Green Pepper</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="redPepper">
+                      <label class="form-check-label" for="redPepper">Red Bellpepper</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="yellowPepper">
+                      <label class="form-check-label" for="yellowPepper">Yellow Bellpepper</label>
+                    </div>
+                  </div> 
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="onion">
+                      <label class="form-check-label" for="onion">Onion</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="tomato" checked>
+                      <label class="form-check-label" for="tomato">Tomato</label>
+                    </div> 
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="mushroom">
+                      <label class="form-check-label" for="mushroom">Mushroom</label>
+                    </div>
+                  </div> 
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="chilli">
+                      <label class="form-check-label" for="chilli">Crushed Chilli in Oil</label>
+                    </div>  
+                  </div>
+                </div> 
+              </div><br>
+              <div>
                 <h3>Sauces:</h3>
                 <div class="row">
                   <div class="col-md-4">
@@ -238,25 +239,29 @@
                 </div>
               </div><br><hr>
               <div>
-                <h2>Delivery Options</h2>
+                <h3>Delivery Options:</h3>
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="delivery" value="deliver" id="deliver">
-                      <label class="form-check-label" for="deliver">Deliver</label>
-                    </div> 
+                      <input class="form-check-input" type="radio" value="deliver" id="deliver">
+                      <label class="form-check-label" for="deliver">Delivery</label>
+                    </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="delivery" value="pickUp" id="pickUp" checked>
-                      <label class="form-check-label" for="pickUp">Pick Up In-store</label>
+                      <input class="form-check-input" type="radio" value="pickUp" id="pickUp" checked>
+                      <label class="form-check-label" for="pickUp">Pick up In-Store</label>
                     </div> 
                   </div>
                 </div>
               </div><br>
-              <div>
-                <span class="btn btn-success" id="addPizza">Another Pizza</span>
-                <button type="submit" class="btn btn-success">Check-out</button>
+              <div class="row">
+                <div class="col-md-4">
+                  <span class="btn btn-success" id="addPizza">Another Pizza</span>
+                </div>
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-success">Check Out</button>
+                </div>
               </div>
             </form> 
           </div>         
