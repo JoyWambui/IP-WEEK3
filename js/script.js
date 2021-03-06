@@ -12,5 +12,7 @@ $(document).ready(function(){
    event.preventDefault();
    let selectSize = document.getElementById("sizeOptions").value;
    console.log(selectSize);
+   let selectCrust = document.getElementById("crustOptions").value;
+   console.log(selectCrust);
  });
 });
