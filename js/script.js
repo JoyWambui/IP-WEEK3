@@ -22,6 +22,14 @@ Pizza.prototype.addVeggies = function(veggies){
 Pizza.prototype.addSauce = function(sauce){
   return this.sauces.push(sauce);
 }
+Pizza.prototype.prices =function(){
+let size = this.pizzaSize;
+let cheeseToppings = this.cheeses.length;
+let meatToppings = this.meats.length;
+let veggieToppings = this.vegetables.length;
+let sauceToppings = this.sauces.length;
+console.log(size, cheeseToppings, meatToppings, veggieToppings, sauceToppings);
+}
 
 //user interface logic
 $(document).ready(function(){
@@ -92,5 +100,6 @@ $(document).ready(function(){
         console.log(sauces);
     });
     console.log(newPizza.displayOrder());
+    console.log(newPizza.prices());
   });
 });
