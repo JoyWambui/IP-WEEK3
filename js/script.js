@@ -30,15 +30,16 @@ Pizza.prototype.prices =function(){
   let sauceToppings = this.sauces.length;
   //checking working of function
   //console.log(size, cheeseToppings, meatToppings, veggieToppings, sauceToppings);
+
   if(size === "Small"){
     let smallPrice = 50
-    return "Ksh."+( smallPrice + (cheeseToppings*80) + (meatToppings*50) + (veggieToppings*30) + (sauceToppings*35));
+    return  parseInt(( smallPrice + (cheeseToppings*80) + (meatToppings*50) + (veggieToppings*30) + (sauceToppings*35)));
   }else if(size === "Medium"){
     let mediumPrice = 100
-    return "Ksh."+( mediumPrice + (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70));
+    return parseInt(( mediumPrice + (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70)));
   }else if(size === "Large"){
     let largePrice = 150
-    return "Ksh."+ parseInt(( largePrice + (cheeseToppings*150) + (meatToppings*130) + (veggieToppings*80) + (sauceToppings*100)));
+    return parseInt((largePrice + (cheeseToppings*150) + (meatToppings*130) + (veggieToppings*80) + (sauceToppings*100)));
   }
 }
 
@@ -58,7 +59,7 @@ $(document).ready(function(){
     console.log(selectCrust);
     var newPizza = new Pizza(selectSize,selectCrust);
 
-    $(".cheeseSelection").each(function(){
+    $("#cheeseSelection").each(function(){
       let cheeses = []
       let selectCheese = document.getElementsByName("cheese");
       for(var i = 0; i < selectCheese.length; i++){
@@ -115,19 +116,37 @@ $(document).ready(function(){
       console.log(newPizza);
       addPizzas(newPizza);
       $("#pizzaForm").trigger("reset");
-      $("#anotherPizza").show();
+      $("#anotherPizza").unbind().show();
       $("#checkOut").show();
-      $("#checkOut").click(function(event){
+      $("#checkOut").unbind().click(function(event){
         event.preventDefault();
-        let total = newPizza.prices();
+        let totals = [];
+
+        for (var i = 0; i < pizzasOrdered.length; i++) {
+          totals.push(pizzasOrdered[i].prices());
+          console.log(totals);
+        }
+        sum = totals.reduce((a, b) => {
+          return a+b;
+        });
+        console.log(sum);
+        $("#pizzaForm").trigger("reset");
+        //$("#anotherPizza").hide();
         $("#orderSummary").show();
+        for (var i = 0; i < pizzasOrdered.length; i++) {
+          if(i>0){$("#showOrder").append("<p>and</p>");}
+          $("#showOrder").append("<p>A " + pizzasOrdered[i].pizzaSize + " pizza with a " + 
+                                pizzasOrdered[i].crustType + " crust with the following toppings: " + 
+                                pizzasOrdered[i].cheeses +" " + pizzasOrdered[i].meats + " " + pizzasOrdered[i].vegetables +
+                                 " " + pizzasOrdered[i].sauces + "<br>" + "Your total is: Ksh." + pizzasOrdered[i].prices(i) + "</p>");
+        }
+        $("#total").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
       });
-    
       console.log(pizzasOrdered);
       //check cheese function
         console.log(sauces);
     });
     //console.log(newPizza.displayOrder());
-    //console.log(newPizza.prices());
+    console.log(newPizza.prices());
   });
 });
