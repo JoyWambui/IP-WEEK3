@@ -1,0 +1,9 @@
+#checkOut{
+  display :none
+}
+span#anotherPizza{
+  display: none;
+}
+#orderSummary{
+  display: none;
+}

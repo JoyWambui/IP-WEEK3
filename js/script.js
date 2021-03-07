@@ -1,4 +1,4 @@
-//business logic
+var pizzasOrdered = [];
 function Pizza(pizzaSize, crustType){
   this.pizzaSize = pizzaSize;
   this.crustType = crustType;
@@ -29,7 +29,7 @@ Pizza.prototype.prices =function(){
   let veggieToppings = this.vegetables.length;
   let sauceToppings = this.sauces.length;
   //checking working of function
-  console.log(size, cheeseToppings, meatToppings, veggieToppings, sauceToppings);
+  //console.log(size, cheeseToppings, meatToppings, veggieToppings, sauceToppings);
   if(size === "Small"){
     let smallPrice = 50
     return "Ksh."+( smallPrice + (cheeseToppings*80) + (meatToppings*50) + (veggieToppings*30) + (sauceToppings*35));
@@ -38,24 +38,26 @@ Pizza.prototype.prices =function(){
     return "Ksh."+( mediumPrice + (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70));
   }else if(size === "Large"){
     let largePrice = 150
-    return "Ksh."+( largePrice + (cheeseToppings*150) + (meatToppings*130) + (veggieToppings*80) + (sauceToppings*100));
+    return "Ksh."+ parseInt(( largePrice + (cheeseToppings*150) + (meatToppings*130) + (veggieToppings*80) + (sauceToppings*100)));
   }
-  //check price calculation
-  console.log("Ksh." + smallTotal);
 }
+
 
 //user interface logic
 $(document).ready(function(){
   console.log("ready");
- $("#pizzaForm").submit(function(event){
-   event.preventDefault();
+  function addPizzas(newPizza){
+    pizzasOrdered.push(newPizza)
+  }
+  
+  $("#pizzaForm").submit(function(event){
+    event.preventDefault();
+    let selectSize = document.getElementById("sizeOptions").value;
+    console.log(selectSize);
+    let selectCrust = document.getElementById("crustOptions").value;
+    console.log(selectCrust);
+    var newPizza = new Pizza(selectSize,selectCrust);
 
-    let pizzaSize = document.getElementById("sizeOptions").value;
-    console.log(pizzaSize);
-    let crustType = document.getElementById("crustOptions").value;
-    console.log(crustType);
-    let newPizza = new Pizza(pizzaSize, crustType);
-    console.log(newPizza);
     $(".cheeseSelection").each(function(){
       let cheeses = []
       let selectCheese = document.getElementsByName("cheese");
@@ -107,12 +109,25 @@ $(document).ready(function(){
         }
       }
       for(var i = 0; i < sauces.length; i++){
-        newPizza.addSauce(sauces[i])
+          newPizza.addSauce(sauces[i])
+          console.log("yay");      
       }
+      console.log(newPizza);
+      addPizzas(newPizza);
+      $("#pizzaForm").trigger("reset");
+      $("#anotherPizza").show();
+      $("#checkOut").show();
+      $("#checkOut").click(function(event){
+        event.preventDefault();
+        let total = newPizza.prices();
+        $("#orderSummary").show();
+      });
+    
+      console.log(pizzasOrdered);
       //check cheese function
         console.log(sauces);
     });
-    console.log(newPizza.displayOrder());
-    console.log(newPizza.prices());
+    //console.log(newPizza.displayOrder());
+    //console.log(newPizza.prices());
   });
 });
