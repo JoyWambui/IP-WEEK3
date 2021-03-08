@@ -50,7 +50,10 @@ $(document).ready(function(){
   function addPizzas(newPizza){
     pizzasOrdered.push(newPizza)
   }
-  
+  $("#deliverOption").click(function(){
+    $("#address").show();
+  });
+
   $("#pizzaForm").submit(function(event){
     event.preventDefault();
     let selectSize = document.getElementById("sizeOptions").value;
@@ -114,9 +117,6 @@ $(document).ready(function(){
           console.log("yay");      
       }
       //console.log(newPizza);
-      if("deliver"===true){
-        
-      }
       addPizzas(newPizza);
       $("#pizzaForm").trigger("reset");
       $("#anotherPizza").unbind().show();
