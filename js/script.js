@@ -113,7 +113,10 @@ $(document).ready(function(){
           newPizza.addSauce(sauces[i])
           console.log("yay");      
       }
-      console.log(newPizza);
+      //console.log(newPizza);
+      if("deliver"===true){
+        
+      }
       addPizzas(newPizza);
       $("#pizzaForm").trigger("reset");
       $("#anotherPizza").unbind().show();

@@ -243,21 +243,39 @@
                   </div> 
                 </div>
               </div><br><hr>
-              <div>
+              <div id="deliveryOptions">
                 <h3>Delivery Options:</h3>
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="deliver" id="deliver">
+                      <input class="form-check-input" name="delivery" type="radio" value="deliver" id="deliver">
                       <label class="form-check-label" for="deliver">Delivery</label>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="pickUp" id="pickUp" checked>
+                      <input class="form-check-input" name="delivery" type="radio" value="pickUp" id="pickUp" checked>
                       <label class="form-check-label" for="pickUp">Pick up In-Store</label>
                     </div> 
                   </div>
+                </div>
+                <div class="row" >
+                  <div class="col-md-12" id="address">
+                    <div class="form-group">
+                      <label for="new-street">Street</label>
+                      <input type="text" class="form-control new-street">
+                    </div>
+                    <div class="form-group">
+                      <label for="new-city">City</label>
+                      <input type="text" class="form-control new-city">
+                    </div>
+                    <div class="form-group">
+                      <label for="new-county">County</label>
+                      <input type="text" class="form-control new-county">
+                    </div>
+                    <button type="button" class=" btn btn-warning" id="deliveryMessage">Add Address</button>
+                  </div>
+
                 </div>
               </div><br>
               <div class="row">
