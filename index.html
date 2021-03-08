@@ -13,13 +13,13 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-3 text-center">BUILD-A-PIZZA</h1>
+          <h1 class="display-3 text-center bg-warning text-white">BUILD-A-PIZZA</h1>
         </div>
         <div class="container">
           <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-              <form id="pizzaForm">
+              <form id="pizzaForm" class="bg-secondary">
                 <h2 class="text-center">Build your pizza</h2>
                 <div class="newOrder">
                   <div class="form-group">
@@ -275,19 +275,21 @@
                   <div class="col-md-4">
                     <button type="button" class="btn btn-success" id="checkOut">Check Out</button>
                   </div>
-                </div>
+                </div><br>
               </form>
             </div>         
             <div class="col-md-1"></div>
           </div><br><hr>
-          <div class="row" id="orderSummary">
-            <div class="col text-center font-weight-bold" id="showOrder">
-              <h2>ORDER SUMMARY</h2>
+          <div class="bg-danger">
+            <div class="row" id="orderSummary">
+              <div class="col text-center font-weight-bold" id="showOrder">
+                <h2>ORDER SUMMARY</h2>
+              </div>
             </div>
-          </div>
-          <div class="row" >
-            <div class="col text-center font-weight-bold" id="total">
-            </div>
+            <div class="row" >
+              <div class="col text-center font-weight-bold" id="total">
+              </div>
+            </div>  
           </div>
         </div>
       </div>
