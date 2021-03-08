@@ -50,9 +50,22 @@ $(document).ready(function(){
   function addPizzas(newPizza){
     pizzasOrdered.push(newPizza)
   }
+
   $("#deliverOption").click(function(){
     $("#address").show();
+    $("#addAddress").show();
+  
   });
+  $("#pick").click(function(){
+    $("#address").hide();
+    $("#addAddress").hide();
+  });
+  $("#addAddress").click(function(){
+    alert("Your order will be delivered to your address. Delivery is free!");
+    $("#address").hide();
+    $(this).hide();
+  })
+
 
   $("#pizzaForm").submit(function(event){
     event.preventDefault();
@@ -114,41 +127,39 @@ $(document).ready(function(){
       }
       for(var i = 0; i < sauces.length; i++){
           newPizza.addSauce(sauces[i])
-          console.log("yay");      
-      }
+          console.log(sauces);
+        }
+    });
       //console.log(newPizza);
-      addPizzas(newPizza);
-      $("#pizzaForm").trigger("reset");
-      $("#anotherPizza").unbind().show();
-      $("#checkOut").show();
-      $("#checkOut").unbind().click(function(event){
-        event.preventDefault();
-        let totals = [];
+    addPizzas(newPizza);
+    $("#anotherPizza").unbind().show();
+    $("#checkOut").show();
+    $("#checkOut").unbind().click(function(event){
+      event.preventDefault();
+      let totals = [];
 
-        for (var i = 0; i < pizzasOrdered.length; i++) {
-          totals.push(pizzasOrdered[i].prices());
-          console.log(totals);
-        }
-        sum = totals.reduce((a, b) => {
-          return a+b;
-        });
-        console.log(sum);
-        $("#pizzaForm").trigger("reset");
-        //$("#anotherPizza").hide();
-        $("#orderSummary").show();
-        for (var i = 0; i < pizzasOrdered.length; i++) {
-          if(i>0){$("#showOrder").append("<p>and</p>");}
-          $("#showOrder").append("<p>A " + pizzasOrdered[i].pizzaSize + " pizza with a " + 
-                                pizzasOrdered[i].crustType + " crust with the following toppings: " + 
-                                pizzasOrdered[i].cheeses +" " + pizzasOrdered[i].meats + " " + pizzasOrdered[i].vegetables +
-                                 " " + pizzasOrdered[i].sauces + "<br>" + "Your total is: Ksh." + pizzasOrdered[i].prices(i) + "</p>");
-        }
-        $("#total").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
+      for (var i = 0; i < pizzasOrdered.length; i++) {
+        totals.push(pizzasOrdered[i].prices());
+        console.log(totals);
+      }
+      sum = totals.reduce((a, b) => {
+        return a+b;
       });
+      console.log(sum);
+      $("#pizzaForm").trigger("reset");
+      //$("#anotherPizza").hide();
+      $("#orderSummary").show();
+      for (var i = 0; i < pizzasOrdered.length; i++) {
+        if(i>0){$("#showOrder").append("<p>and</p>");}
+        $("#showOrder").append("<p>A " + pizzasOrdered[i].pizzaSize + " pizza with a " + 
+                              pizzasOrdered[i].crustType + " crust with the following toppings: " + 
+                              pizzasOrdered[i].cheeses +" " + pizzasOrdered[i].meats + " " + pizzasOrdered[i].vegetables +
+                                " " + pizzasOrdered[i].sauces + "<br>" + "Your total is: Ksh." + pizzasOrdered[i].prices(i) + "</p>");
+      }
+      $("#total").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
+    });
       console.log(pizzasOrdered);
       //check cheese function
-        console.log(sauces);
-    });
     //console.log(newPizza.displayOrder());
     console.log(newPizza.prices());
   });
