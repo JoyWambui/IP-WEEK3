@@ -7,3 +7,6 @@ span#anotherPizza{
 #orderSummary{
   display: none;
 }
+#address{
+  display: none;
+}
