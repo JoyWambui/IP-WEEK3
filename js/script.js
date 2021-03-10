@@ -32,14 +32,17 @@ Pizza.prototype.prices =function(){
   //console.log(size, cheeseToppings, meatToppings, veggieToppings, sauceToppings);
 
   if(size === "Small"){
-    let smallPrice = 50
-    return  parseInt(( smallPrice + (cheeseToppings*80) + (meatToppings*50) + (veggieToppings*30) + (sauceToppings*35)));
+    let smallPrice = 50;
+    let smallCrust = 30;
+    return  parseInt(( smallPrice + smallCrust +  (cheeseToppings*80) + (meatToppings*50) + (veggieToppings*30) + (sauceToppings*35)));
   }else if(size === "Medium"){
-    let mediumPrice = 100
-    return parseInt(( mediumPrice + (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70)));
+    let mediumPrice = 100;
+    let mediumCrust =50;
+    return parseInt(( mediumPrice + mdeiumCrust +  (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70)));
   }else if(size === "Large"){
-    let largePrice = 150
-    return parseInt((largePrice + (cheeseToppings*150) + (meatToppings*130) + (veggieToppings*80) + (sauceToppings*100)));
+    let largePrice = 150;
+    let largeCrust = 70;
+    return parseInt((largePrice + largeCrust + (cheeseToppings*150) + (meatToppings*130) + (veggieToppings*80) + (sauceToppings*100)));
   }
 }
 
