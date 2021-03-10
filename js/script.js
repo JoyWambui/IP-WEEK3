@@ -155,8 +155,9 @@ $(document).ready(function(){
                               pizzasOrdered[i].crustType + " crust with the following toppings: " + 
                               pizzasOrdered[i].cheeses +" " + pizzasOrdered[i].meats + " " + pizzasOrdered[i].vegetables +
                                 " " + pizzasOrdered[i].sauces + "<br>" + "Your total is: Ksh." + pizzasOrdered[i].prices(i) + "</p>");
-      }
+      };
       $("#total").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
+      $("#total")[0].scrollIntoView();
     });
       console.log(pizzasOrdered);
       //check cheese function
