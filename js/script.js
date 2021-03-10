@@ -223,6 +223,8 @@ $(document).ready(function(){
     $("#checkOut").show();
     $("#checkOut").unbind().click(function(event){
       event.preventDefault();
+      var resetForm = document.getElementById("pizzaForm");
+      resetForm.reset();
       let totals = [];
 
       for (var i = 0; i < pizzasOrdered.length; i++) {
@@ -234,6 +236,7 @@ $(document).ready(function(){
       });
       console.log(sum);
       $("#anotherPizza").hide();
+      $("#addPizza").hide();
       $("#orderSummary").show();
       for (var i = 0; i < pizzasOrdered.length; i++) {
         if(i>0){$("#showOrder").append("<p>and</p>");}
@@ -246,15 +249,30 @@ $(document).ready(function(){
       };
       if(deliveryCheck===false){
         $("#showOrder").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
+        $("#showOrder").append('<button type="button" class="btn btn-dark" id="reload">Finish</button>')
+        $("#reload").click(function(){
+         location.reload();
+         window.scrollTo(0,0);
+
+        });
         $("#showOrder")[0].scrollIntoView();  
       }else if(deliveryCheck===true){
         $("#showOrder").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + (sum+150) + "(delivery fee included)</strong></h3>");
+        $("#showOrder").append('<button type="button" class="btn btn-dark" id="reload">Finish</button>')
+        $("#reload").click(function(){
+         location.reload();
+         window.scrollTo(0,0);
+
+        });
         $("#showOrder")[0].scrollIntoView();
-  
       }
+      $("#checkOut").hide();
     });
-    var resetForm = document.getElementById("pizzaForm");
-    resetForm.reset();
+    $('#pizzaForm').find(' select').val('Choose');
+    $('#pizzaForm').find(' input[type="checkbox"]').prop("checked", false);
+    //var resetForm = document.getElementById("pizzaForm");
+    //resetForm.reset();
+
       console.log(pizzasOrdered);
       //check cheese function
     //console.log(newPizza.displayOrder());
