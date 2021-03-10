@@ -38,7 +38,7 @@ Pizza.prototype.prices =function(){
   }else if(size === "Medium"){
     let mediumPrice = 100;
     let mediumCrust =50;
-    return parseInt(( mediumPrice + mdeiumCrust +  (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70)));
+    return parseInt(( mediumPrice + mediumCrust +  (cheeseToppings*100) + (meatToppings*80) + (veggieToppings*60) + (sauceToppings*70)));
   }else if(size === "Large"){
     let largePrice = 150;
     let largeCrust = 70;
@@ -73,9 +73,68 @@ $(document).ready(function(){
   $("#pizzaForm").submit(function(event){
     event.preventDefault();
     let selectSize = document.getElementById("sizeOptions").value;
-    console.log(selectSize);
+    //console.log(selectSize);
     let selectCrust = document.getElementById("crustOptions").value;
-    console.log(selectCrust);
+    //console.log(selectCrust);
+
+    if(selectSize === 'Choose'){
+      $("#sizeError")[0].style.display ="block";
+      $("#cheeseScroll")[0].scrollIntoView(); 
+      return false;
+    }else {
+      $("#sizeError")[0].style.display ="none";      
+    }
+    
+    if(selectCrust === 'Choose'){
+      $("#crustError")[0].style.display = "block"; 
+      $("#crustScroll")[0].scrollIntoView(); 
+      return false;
+    } else{
+      $("#crustError")[0].style.display = "none";  
+    }
+
+    var cheeseChecked = $("#pizzaForm input[name='cheese']:checked").length;
+    var cheeseValid = cheeseChecked > 0 ;
+    if(cheeseValid === false){
+      $("#cheeseError")[0].style.display ="block"; 
+      $("#cheeseSelection")[0].scrollIntoView(); 
+      return false;
+    }else{
+      $("#cheeseError")[0].style.display = "none"; 
+    }
+    var meatChecked = $("#pizzaForm input[name='meat']:checked").length;
+    var meatValid = meatChecked > 0 ;
+    if(meatValid === false){
+      $("#meatError")[0].style.display ="block"; 
+      return false;
+    }else{
+      $("#meatError")[0].style.display = "none"; 
+    }
+    var veggieChecked = $("#pizzaForm input[name='veggies']:checked").length;
+    var veggieValid = veggieChecked > 0 ;
+    if(veggieValid === false){
+      $("#veggieError")[0].style.display ="block"; 
+      return false;
+    }else{
+      $("#veggieError")[0].style.display = "none"; 
+    }
+    var sauceChecked = $("#pizzaForm input[name='sauce']:checked").length;
+    var sauceValid = sauceChecked > 0 ;
+    if(sauceValid === false){
+      $("#sauceError")[0].style.display ="block"; 
+      return false;
+    }else{
+      $("#sauceError")[0].style.display = "none"; 
+    }
+    var deliveryOption = $("#pizzaForm input[type=radio]:checked").length>0;
+    if(deliveryOption === false){
+      $("#deliveryError")[0].style.display = "block"; 
+       return false;
+    }else{
+      $("#deliveryError")[0].style.display = "none"; 
+
+    }
+
     var newPizza = new Pizza(selectSize,selectCrust);
 
     $("#cheeseSelection").each(function(){
