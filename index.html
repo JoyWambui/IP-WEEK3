@@ -24,7 +24,8 @@
                 <div class="newOrder">
                   <div class="form-group">
                     <label for="sizeOptions"><h3>Pizza size:</h3><h5>Sm: Ksh.50 Md: Ksh.100 Lg: Ksh.150</h5></label>
-                    <select class="form-control" id="sizeOptions" required>
+                    <select class="form-control" id="sizeOptions">
+                      <option >Choose...</option>
                       <option value="Small">Small (Sm)</option>
                       <option value="Medium">Medium (Md)</option>
                       <option value="Large">Large (lg)</option>
@@ -32,7 +33,8 @@
                   </div>
                   <div class="form-group">
                     <label for="crustOptions"><h3>Crust type:</h3><h5>Free</h5></label>
-                    <select class="form-control" id="crustOptions" required>
+                    <select class="form-control" id="crustOptions">
+                      <option>Choose...</option>
                       <option value="Thin & crispy">Thin & crispy</option>
                       <option value="Deep-pan">Deep-pan</option>
                       <option value="Double Stack">Double Stack</option>
@@ -51,7 +53,7 @@
                       </div>
                       <div class="col-md-4">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="cheese" value="Cheddar" id="cheddar" checked>
+                          <input class="form-check-input" type="checkbox" name="cheese" value="Cheddar" id="cheddar">
                           <label class="form-check-label" for="cheddar">Cheddar</label>
                         </div> 
                       </div>
@@ -89,7 +91,7 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="meat" value="Ham" id="ham" checked>
+                          <input class="form-check-input" type="checkbox" name="meat" value="Ham" id="ham" >
                           <label class="form-check-label" for="ham">Ham</label>
                         </div> 
                       </div>
@@ -161,7 +163,7 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="veggies" value="Onion" id="onion" checked>
+                          <input class="form-check-input" type="checkbox" name="veggies" value="Onion" id="onion" >
                           <label class="form-check-label" for="onion">Onion</label>
                         </div> 
                       </div>
@@ -193,7 +195,7 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="sauce" value="In-house Specialty Sauce" id="In-house Specialty Sauce" checked >
+                          <input class="form-check-input" type="checkbox" name="sauce" value="In-house Specialty Sauce" id="In-house Specialty Sauce" >
                           <label class="form-check-label" for="specialitySc">In-house Specialty Sauce</label>
                         </div>
                       </div>
@@ -243,7 +245,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-check">
-                        <input class="form-check-input" name="delivery" type="radio" value="pickUp" id="pick" checked>
+                        <input class="form-check-input" name="delivery" type="radio" value="pickUp" id="pick">
                         <label class="form-check-label" for="pick"><h5>Pick up In-Store</h5></label>
                       </div> 
                     </div>

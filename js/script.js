@@ -146,19 +146,22 @@ $(document).ready(function(){
         return a+b;
       });
       console.log(sum);
-      $("#pizzaForm").trigger("reset");
-      //$("#anotherPizza").hide();
+      $("#anotherPizza").hide();
       $("#orderSummary").show();
       for (var i = 0; i < pizzasOrdered.length; i++) {
         if(i>0){$("#showOrder").append("<p>and</p>");}
         $("#showOrder").append("<p>A " + pizzasOrdered[i].pizzaSize + " pizza with a " + 
                               pizzasOrdered[i].crustType + " crust with the following toppings: " + 
                               pizzasOrdered[i].cheeses +" " + pizzasOrdered[i].meats + " " + pizzasOrdered[i].vegetables +
-                                " " + pizzasOrdered[i].sauces + "<br>" + "Your total is: Ksh." + pizzasOrdered[i].prices(i) + "</p>");
+                                " " + pizzasOrdered[i].sauces + "<br>" + "Your total is: Ksh." + pizzasOrdered[i].prices(i) + "</p><br>" 
+                                //"<h3 class='text-center'>Sum Total: " +"<strong>" + "Ksh." + sum + "</strong></h3>"
+                              );
       };
-      $("#total").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
-      $("#total")[0].scrollIntoView();
+      $("#showOrder").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
+      $("#showOrder")[0].scrollIntoView();
     });
+    var resetForm = document.getElementById("pizzaForm");
+    resetForm.reset();
       console.log(pizzasOrdered);
       //check cheese function
     //console.log(newPizza.displayOrder());
