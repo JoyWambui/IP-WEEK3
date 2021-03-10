@@ -14,7 +14,7 @@
    4. List the contents of the folder to check that the directory is present.
    5. Open the index.html file in-browser.
 ## Link to Live Site
- [ BUILD-a-PIZZA](https://joywambui.github.io/IP-WEEK3/)
+ [ BUILD-a-PIZZA](https://joywambui.github.io/IP-WEEK4/)
 ## License
  Project licensed under [MIT License](https://github.com/JoyWambui/IP-WEEK3/blob/master/LICENSE)
 
