@@ -54,20 +54,44 @@ $(document).ready(function(){
     pizzasOrdered.push(newPizza)
   }
 
-  $("#deliverOption").click(function(){
-    $("#address").show();
-    $("#addAddress").show();
   
-  });
+    $("#deliverOption").click(function(){
+      $("#address").show();
+      $("#addAddress").show();
+    });
+
   $("#pick").click(function(){
     $("#address").hide();
     $("#addAddress").hide();
   });
   $("#addAddress").click(function(){
-    alert("Your order will be delivered to your address. Delivery is free!");
+    if($("#city").val()===''){
+      $("#cityError")[0].style.display ="block";
+      return false;
+    }else {
+      $("#cityError")[0].style.display ="none";
+    }
+    if($("#street").val()===''){
+      $("#streetError")[0].style.display ="block";
+      return false;
+    }else {
+      $("#streetError")[0].style.display ="none";
+
+    }
+    if($("#residence").val()===''){
+      $("#residenceError")[0].style.display ="block";
+      return false;
+    }else{
+      $("#residenceError")[0].style.display ="none";
+
+    }
+    var inputCity = $("#city").val();
+    var inputStreet =$("#street").val();
+    var inputResidence =$("#residence").val();
     $("#address").hide();
     $(this).hide();
-  })
+    $("#deliveryMessage").append("<h5>Thank you! Your order will be delivered to " + inputResidence + " ," + inputStreet + " ," + inputCity + " for Ksh.150 after you check out</h5>");
+  });
 
 
   $("#pizzaForm").submit(function(event){
@@ -76,7 +100,8 @@ $(document).ready(function(){
     //console.log(selectSize);
     let selectCrust = document.getElementById("crustOptions").value;
     //console.log(selectCrust);
-
+    let deliveryCheck = document.getElementById("deliverOption").checked;
+    console.log(deliveryCheck);
     if(selectSize === 'Choose'){
       $("#sizeError")[0].style.display ="block";
       $("#cheeseScroll")[0].scrollIntoView(); 
@@ -205,7 +230,7 @@ $(document).ready(function(){
         console.log(totals);
       }
       sum = totals.reduce((a, b) => {
-        return a+b;
+        return (a+b);
       });
       console.log(sum);
       $("#anotherPizza").hide();
@@ -219,8 +244,14 @@ $(document).ready(function(){
                                 //"<h3 class='text-center'>Sum Total: " +"<strong>" + "Ksh." + sum + "</strong></h3>"
                               );
       };
-      $("#showOrder").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
-      $("#showOrder")[0].scrollIntoView();
+      if(deliveryCheck===false){
+        $("#showOrder").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + sum +"</strong></h3>");
+        $("#showOrder")[0].scrollIntoView();  
+      }else if(deliveryCheck===true){
+        $("#showOrder").append("<br><h3>Sum Total: " +"<strong>" + "Ksh." + (sum+150) + "(delivery fee included)</strong></h3>");
+        $("#showOrder")[0].scrollIntoView();
+  
+      }
     });
     var resetForm = document.getElementById("pizzaForm");
     resetForm.reset();

@@ -238,47 +238,52 @@
                         </div>
                       </div>
                     </div> 
-                  </div>
-                </div><br>
-                <span id="sauceError" class="text-warning" style="display: none">Please select at-least one Sauce Option.</span><br>
-                <hr>
-                <div id="deliveryOptions">
-                  <h3>Delivery Options:</h3>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-check">
-                        <input class="form-check-input" name="delivery" type="radio" value="deliver" id="deliverOption">
-                        <label class="form-check-label" for="deliverOption"><h5>Delivery</h5></label>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-check">
-                        <input class="form-check-input" name="delivery" type="radio" value="pickUp" id="pick">
-                        <label class="form-check-label" for="pick"><h5>Pick up In-Store</h5></label>
-                      </div> 
-                    </div>
                   </div><br>
-                  <span id="deliveryError" class="text-warning" style="display: none">Please select One Option.</span><br>
-                  <div class="row">
-                    <div class="col-md-12" id="address">
-                      <div class="form-group">
-                        <label for="new-street">Street</label>
-                        <input type="text" class="form-control new-street">
+                  <span id="sauceError" class="text-warning" style="display: none">Please select at-least one Sauce Option.</span><br>
+                </div><br><hr>
+                <div class="row" id="deliveryOptions">
+                  <div class="col-md-12">
+                    <h3>Delivery Options:</h3>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" name="delivery" type="radio" value="deliver" id="deliverOption">
+                          <label class="form-check-label" for="deliverOption"><h5>Delivery: Ksh.150</h5></label>
+                        </div>
                       </div>
-                      <div class="form-group">
-                        <label for="new-city">City</label>
-                        <input type="text" class="form-control new-city">
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <input class="form-check-input" name="delivery" type="radio" value="pickUp" id="pick">
+                          <label class="form-check-label" for="pick"><h5>Pick up In-Store</h5></label>
+                        </div> 
                       </div>
-                      <div class="form-group">
-                        <label for="new-county">County</label>
-                        <input type="text" class="form-control new-county">
+                    </div><br>
+                    <span id="deliveryError" class="text-warning" style="display: none">Please select One Option.</span><br>
+                    <div class="row">
+                      <div class="col-md-6" id="address">
+                        <div class="form-group">
+                          <label for="city"><h5>City</h5></label>
+                          <input type="text" class="form-control new-city" id="city" placeholder="City">
+                        </div>
+                        <span id="cityError" class="text-warning" style="display: none"><h5>Please input City</h5></span><br>
+                        <div class="form-group">
+                          <label for="street"><h5>Street</h5></label>
+                          <input type="text" class="form-control new-street" id="street" placeholder="Street">
+                        </div>
+                        <span id="streetError" class="text-warning" style="display: none"><h5>Please input Street</h5></span><br>
+                        <div class="form-group">
+                          <label for="residence"><h5>Residence</h5></label>
+                          <input type="text" class="form-control new-county" id="residence" placeholder="Apartment/Building/House">
+                        </div>
+                        <span id="residenceError" class="text-warning" style="display: none"><h5>Please input Residence</h5></span><br>
                       </div>
-                    </div>
+                    </div> 
+                    <div id="deliveryMessage"></div> 
                   </div>
                 </div><br>
                 <div class="row">
                   <div class="col-md-4">
-                    <button type="button" id="addAddress" class="btn btn-warning">Add Address</button>
+                    <button type="button" id="addAddress" class="btn btn-info">Add Address</button>
                   </div>
                   <div class="col-md-4" id="addPizza">
                     <button type="submit" id="addPizza" class="btn btn-danger">Add <span id="anotherPizza">Another</span> Pizza</button>
